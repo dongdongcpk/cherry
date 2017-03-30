@@ -15,7 +15,7 @@
 
   "gameServerTypes": [
     "chat",
-    "battle"
+    "pk"
   ]
 
 }
