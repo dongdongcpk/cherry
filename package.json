@@ -1,0 +1,18 @@
+{
+  "name": "cherry",
+  "version": "1.0.0",
+  "description": "a light-weight, scalable game server engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yaodong",
+  "license": "ISC",
+  "dependencies": {
+    "busmq": "^2.0.0",
+    "debug": "^2.5.2",
+    "ioredis": "^2.4.3",
+    "pm2": "^2.2.3",
+    "ws": "^1.1.1"
+  }
+}
