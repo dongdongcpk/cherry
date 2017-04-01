@@ -1,26 +1,14 @@
 const WebSocket = require('ws');
 const userId = '1001';
 const ws = new WebSocket(`ws://127.0.0.1:8080/?userId=${userId}`);
-
-function send (ws, serverType, func, msg) {
-  msg = _encode(msg || []);
-  ws.send(`${serverType}__${func}__${msg}`);
-}
-
-function _decode (msg) {
-  return JSON.parse(msg);
-}
-
-function _encode (msg) {
-  return JSON.stringify(msg);
-}
+const utils = require('../../lib/utils');
 
 ws.on('open', () => {
-  send(ws, 'pk', 'count');
+  utils.send(ws, 'pk', 'ready');
 });
 
 ws.on('message', (msg) => {
-  msg = _decode(msg);
+  msg = utils.decode(msg);
   console.log(msg);
 });
 
