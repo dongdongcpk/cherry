@@ -1,8 +1,8 @@
 {
   "name": "cherry",
   "version": "1.0.0",
-  "description": "a light-weight, scalable game server engine",
-  "main": "cherry.js",
+  "description": "a light-weight, scalable, distributed game server engine",
+  "main": "app.js",
   "scripts": {
     "cherry-connector": "node lib/connector.js 8080",
     "cherry-chat": "node app.js chat",
@@ -12,7 +12,7 @@
     "cherry-pk-debug": "DEBUG=cherry:* node app.js pk"
   },
   "author": "yaodong",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "busmq": "^2.0.0",
     "ws": "^1.1.1"
