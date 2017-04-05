@@ -2,9 +2,11 @@
   "name": "cherry",
   "version": "1.0.0",
   "description": "a light-weight, scalable game server engine",
-  "main": "index.js",
+  "main": "cherry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cherry-connector": "DEBUG=cherry:connector node lib/connector.js 8080",
+    "cherry-chat": "DEBUG=cherry:* node app.js chat",
+    "cherry-pk": "DEBUG=cherry:* node app.js pk"
   },
   "author": "yaodong",
   "license": "ISC",
