@@ -1,5 +1,5 @@
-# Cherry-pit
-Cherry-pit是一个轻量的、可伸缩的、分布式多进程游戏框架。
+# cherry-pit
+cherry-pit是一个轻量的、可伸缩的、分布式多进程游戏框架。
 
 ## 安装
 ```
@@ -9,7 +9,7 @@ npm install cherry-pit
 ## 用法
 ### 安装依赖
 ```
-cd cherry
+cd cherry-pit
 npm install
 ```
 ### 启动示例服务端
@@ -18,6 +18,25 @@ npm run cherry-connector
 npm run cherry-chat
 npm run cherry-pk
 ```
+等同于：
+
+```
+node lib/connector.js 8080
+node app.js chat
+node app.js pk
+```
+或者多进程启动：
+
+```
+node lib/connector.js 8080
+node lib/connector.js 8081
+node app.js chat
+node app.js chat
+node app.js pk
+node app.js pk
+```
+相同类型的进程会自动实现负载均衡，也可以使用pm2进行进程管理。
+
 ### 启动示例客户端
 ```
 node test/helper/wsClient2.js
@@ -73,9 +92,12 @@ module.exports = {
   talk2multi
 };
 ```
-`app.js`，入口文件，引入接口。
+`app.js`，入口文件，引入接口。返回值可以为promise或基本类型。
 
 ```js
+const chat = require('./service/chat/chat');
+const pk = require('./service/pk/pk');
+
 let result;
 try {
   switch (serverType) {
