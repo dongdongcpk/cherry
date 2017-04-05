@@ -1,5 +1,4 @@
 {
-
   "busOptions": {
     "driver": "ioredis",
     "layout": "",
@@ -7,10 +6,8 @@
       "redis://127.0.0.1:6379"
     ]
   },
-
   "gameServerTypes": [
     "chat",
     "pk"
   ]
-
 }
