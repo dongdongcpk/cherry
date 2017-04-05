@@ -1,9 +1,9 @@
-# Cherry
-Cherry是一个轻量的、可伸缩的、分布式多进程游戏框架。
+# Cherry-pit
+Cherry-pit是一个轻量的、可伸缩的、分布式多进程游戏框架。
 
 ## 安装
 ```
-npm install
+npm install cherry-pit
 ```
 
 ## 用法
