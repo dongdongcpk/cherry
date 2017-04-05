@@ -4,18 +4,21 @@
   "description": "a light-weight, scalable game server engine",
   "main": "cherry.js",
   "scripts": {
-    "cherry-connector": "DEBUG=cherry:connector node lib/connector.js 8080",
-    "cherry-chat": "DEBUG=cherry:* node app.js chat",
-    "cherry-pk": "DEBUG=cherry:* node app.js pk"
+    "cherry-connector": "node lib/connector.js 8080",
+    "cherry-chat": "node app.js chat",
+    "cherry-pk": "node app.js pk",
+    "cherry-connector-debug": "DEBUG=cherry:connector node lib/connector.js 8080",
+    "cherry-chat-debug": "DEBUG=cherry:* node app.js chat",
+    "cherry-pk-debug": "DEBUG=cherry:* node app.js pk"
   },
   "author": "yaodong",
   "license": "ISC",
   "dependencies": {
     "busmq": "^2.0.0",
-    "debug": "^2.5.2",
     "ws": "^1.1.1"
   },
   "devDependencies": {
-    "ava": "^0.18.2"
+    "ava": "^0.18.2",
+    "debug": "^2.6.3"
   }
 }
