@@ -1,6 +1,6 @@
 {
   "name": "cherry-pit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a light-weight, scalable, distributed game server engine",
   "main": "app.js",
   "scripts": {

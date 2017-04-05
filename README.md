@@ -26,7 +26,7 @@ node test/helper/wsClient1.js
 ### 配置
 `config/dev/config.json`，`busOptions`的配置参考[这里](https://capriza.github.io/node-busmq/usage/)，在`gameServerTypes `中增加你的逻辑服务器类型。
 
-```
+```json
 {
   "busOptions": {
     "driver": "ioredis",
@@ -52,7 +52,7 @@ node test/helper/wsClient1.js
 ```
 `service/chat/chat.js`，在具体的服务目录下提供接口。
 
-```
+```js
 function talk (gameServer, args) {
   return args;
 }
@@ -75,7 +75,7 @@ module.exports = {
 ```
 `app.js`，入口文件，引入接口。
 
-```
+```js
 let result;
 try {
   switch (serverType) {
