@@ -4,6 +4,7 @@
   "description": "a light-weight, scalable, distributed game server engine",
   "main": "app.js",
   "scripts": {
+    "test": "ava test/unit/test.js",
     "cherry-connector": "node lib/connector.js 8080",
     "cherry-chat": "node app.js chat",
     "cherry-pk": "node app.js pk",
@@ -11,6 +12,14 @@
     "cherry-chat-debug": "DEBUG=cherry:* node app.js chat",
     "cherry-pk-debug": "DEBUG=cherry:* node app.js pk"
   },
+  "keywords": [
+    "cherry",
+    "game",
+    "server",
+    "engine",
+    "frameword",
+    "realtime"
+  ],
   "author": "yaodong",
   "license": "MIT",
   "dependencies": {
