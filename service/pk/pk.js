@@ -1,5 +1,5 @@
 function fight (gameServer, args) {
-  return args;
+  return Promise.resolve(args);
 }
 
 function ready (gameServer, args) {

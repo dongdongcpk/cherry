@@ -5,21 +5,27 @@ const pk = require('./service/pk/pk');
 
 gameServer.on('message', (msg) => {
   const [userId, serverType, func, args] = msg;
-  let res;
+  let result;
   try {
     switch (serverType) {
       case 'chat':
-        res = chat[func](gameServer, args);
+        result = chat[func](gameServer, args);
         break;
       case 'pk':
-        res = pk[func](gameServer, args);
+        result = pk[func](gameServer, args);
         break;
     }
   }
   catch (err) {
     console.error(err);
   }
-  if (res) {
-    gameServer.send(userId, res);
+  if (result) {
+    Promise.resolve(result)
+      .then(res => {
+        if (res) gameServer.send(userId, res);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 });
