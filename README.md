@@ -2,6 +2,7 @@
 cherry-pit🍒 is a light-weight, scalable, distributed game server engine.
 
 [中文文档](https://github.com/dongdongcpk/cherry/blob/master/doc/README-zh-cn.md)
+
 ## Installation
 ```
 npm install cherry-pit -g
