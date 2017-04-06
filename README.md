@@ -3,13 +3,17 @@ cherry-pit是一个轻量的、可伸缩的、分布式多进程游戏框架。
 
 ## 安装
 ```
-npm install cherry-pit
+npm install cherry-pit -g
 ```
 
 ## 用法
+### 初始化
+```
+cherry init
+```
 ### 安装依赖
 ```
-cd cherry-pit
+cd cherry
 npm install
 ```
 ### 启动示例服务端

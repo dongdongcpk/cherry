@@ -12,18 +12,24 @@
     "cherry-chat-debug": "DEBUG=cherry:* node app.js chat",
     "cherry-pk-debug": "DEBUG=cherry:* node app.js pk"
   },
+  "bin": {
+    "cherry": "bin/index.js"
+  },
   "keywords": [
     "cherry",
     "game",
     "server",
     "engine",
-    "frameword",
+    "framework",
     "realtime"
   ],
   "author": "yaodong",
   "license": "MIT",
   "dependencies": {
     "busmq": "^2.0.0",
+    "commander": "^2.9.0",
+    "figlet": "^1.2.0",
+    "shelljs": "^0.7.7",
     "ws": "^1.1.1"
   },
   "devDependencies": {
