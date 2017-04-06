@@ -51,7 +51,7 @@ node test/helper/wsClient2.js
 node test/helper/wsClient1.js
 ```
 ### Configuration
-`config/dev/config.json`, `busOptions`configuration reference [here](https://capriza.github.io/node-busmq/usage/), add your logical server type to `gameServerTypes`.
+`config/dev/config.json`, `busOptions` configuration reference [here](https://capriza.github.io/node-busmq/usage/), add your logical server type to `gameServerTypes`.
 
 ```json
 {
