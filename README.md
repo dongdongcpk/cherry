@@ -1,35 +1,37 @@
 # cherry-pit
-cherry-pit是一个轻量的、可伸缩的、分布式多进程游戏框架。
+cherry-pit🍒 is a light-weight, scalable, distributed game server engine.
 
-## 安装
+[中文文档](https://github.com/dongdongcpk/cherry/blob/master/doc/README-zh-cn.md)
+## Installation
 ```
 npm install cherry-pit -g
 ```
-
-## 用法
-### 初始化
+## Usage
+### Initialization
 ```
 cherry init
 ```
-### 安装依赖
+### Install dependencies
 ```
 cd cherry
 npm install
 ```
-### 启动示例服务端
+### Start server examples
 ```
 npm run cherry-connector
 npm run cherry-chat
 npm run cherry-pk
 ```
-等同于：
+
+same as above:
 
 ```
 node lib/connector.js 8080
 node app.js chat
 node app.js pk
 ```
-或者多进程启动：
+
+or start multi process:
 
 ```
 node lib/connector.js 8080
@@ -39,15 +41,16 @@ node app.js chat
 node app.js pk
 node app.js pk
 ```
-相同类型的进程会自动实现负载均衡，也可以使用pm2进行进程管理。
 
-### 启动示例客户端
+The same type of process will automatically achieve load balancing, you can also use pm2 for process management.
+
+### Start client examples
 ```
 node test/helper/wsClient2.js
 node test/helper/wsClient1.js
 ```
-### 配置
-`config/dev/config.json`，`busOptions`的配置参考[这里](https://capriza.github.io/node-busmq/usage/)，在`gameServerTypes `中增加你的逻辑服务器类型。
+### Configuration
+`config/dev/config.json`, `busOptions`configuration reference [here](https://capriza.github.io/node-busmq/usage/), add your logical server type to `gameServerTypes`.
 
 ```json
 {
@@ -64,7 +67,8 @@ node test/helper/wsClient1.js
   ]
 }
 ```
-在`service/`下增加对应的服务目录。
+
+Add the service directory under `service/`.
 
 ```
 ├── service
@@ -73,7 +77,7 @@ node test/helper/wsClient1.js
 │   └── pk
 │       └── pk.js
 ```
-`service/chat/chat.js`，在具体的服务目录下提供接口。
+`service/chat/chat.js`, in the specific service directory to provide the interface.
 
 ```js
 function talk (gameServer, args) {
@@ -96,7 +100,7 @@ module.exports = {
   talk2multi
 };
 ```
-`app.js`，入口文件，引入接口。返回值可以为promise或基本类型。
+`app.js` is the entrance, import interface. The return value can be either promise or primitive type.
 
 ```js
 const chat = require('./service/chat/chat');
@@ -117,6 +121,7 @@ catch (err) {
   console.error(err);
 }
 ```
+
 ## API
 ### gameServer
 #### Event: 'message'
